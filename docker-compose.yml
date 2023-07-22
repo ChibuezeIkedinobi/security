@@ -1,0 +1,16 @@
+# From https://hub.docker.com/_/mariadb/
+version: '3.9'
+
+services:
+  database:
+    image: bitnami/mysql:8.0.32  #docker image for mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ikedi
+      MYSQL_DATABASE: jwt_service
+      MYSQL_USER: jwt_service_user
+      MYSQL_PASSWORD: 2017ylda0l3R
+    ports:
+      - 12345:3306
+    volumes:
+      - ./db/my.cnf:/etc/mysql/my.cnf
